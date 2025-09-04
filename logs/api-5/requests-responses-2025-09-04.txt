@@ -1,0 +1,22 @@
+=== 2025-09-04 01:14:52 UTC ===
+Server: Container: 422f75da48f0
+Method: GET
+Path: /
+Status Code: 200
+Duration: 6.36 ms
+Response Body: Hello World! API is running.
+
+=== 2025-09-04 01:14:52 UTC ===
+Server: Container: 422f75da48f0
+Method: GET
+Path: /favicon.ico
+Status Code: 404
+Duration: 0.26 ms
+
+=== 2025-09-04 01:14:56 UTC ===
+Server: Container: 422f75da48f0
+Method: GET
+Path: /swagger
+Status Code: 404
+Duration: 0.09 ms
+

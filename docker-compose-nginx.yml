@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  # Load Balancer
+  nginx:
+    image: nginx:alpine
+    container_name: weather-nginx-lb
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - weatherapi-1
+      - weatherapi-2
+      - weatherapi-3
+    restart: unless-stopped
+
+  # API Instance 1
+  weatherapi-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api-1
+    ports:
+      - "8081:8080"  # Expose for direct testing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - CONTAINER_NAME=weather-api-1
+      - SERVER_INSTANCE=WeatherAPI-Instance-1
+    volumes:
+      - ./logs/api-1:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # API Instance 2
+  weatherapi-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api-2
+    ports:
+      - "8082:8080"  # Expose for direct testing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - CONTAINER_NAME=weather-api-2
+      - SERVER_INSTANCE=WeatherAPI-Instance-2
+    volumes:
+      - ./logs/api-2:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # API Instance 3
+  weatherapi-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api-3
+    ports:
+      - "8083:8080"  # Expose for direct testing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - CONTAINER_NAME=weather-api-3
+      - SERVER_INSTANCE=WeatherAPI-Instance-3
+    volumes:
+      - ./logs/api-3:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Additional API Instances for Load Testing
+  weatherapi-4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api-4
+    ports:
+      - "8084:8080"  # Expose for direct testing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - CONTAINER_NAME=weather-api-4
+      - SERVER_INSTANCE=WeatherAPI-Instance-4
+    volumes:
+      - ./logs/api-4:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # API Instance 5
+  weatherapi-5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api-5
+    ports:
+      - "8085:8080"  # Expose for direct testing
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - CONTAINER_NAME=weather-api-5
+      - SERVER_INSTANCE=WeatherAPI-Instance-5
+    volumes:
+      - ./logs/api-5:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  default:
+    name: weather-api-network

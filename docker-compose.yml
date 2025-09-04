@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  weatherapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather-api-container
+    ports:
+      - "5000:8080"  # Changed from 5000:8080 - now accessible on localhost:3000
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080  # Container still listens on 8080 internally
+      - CONTAINER_NAME=weather-api-container
+      - SERVER_INSTANCE=WeatherAPI-v1.0
+    volumes:
+      - ./logs:/app/logs  # Mount logs directory for persistent logging
+    restart: unless-stopped

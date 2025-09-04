@@ -1,0 +1,1 @@
+2025-09-04 01:14:32.515 +00:00 [WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://+:8080'.

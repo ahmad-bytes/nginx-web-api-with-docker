@@ -1,0 +1,6 @@
+2025-09-04 01:14:33.042 +00:00 [WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://+:8080'.
+2025-09-04 01:14:52.640 +00:00 [WRN] Failed to determine the https port for redirect.
+2025-09-04 01:14:52.642 +00:00 [INF] Health check endpoint accessed
+2025-09-04 01:14:52.666 +00:00 [INF] Request GET / completed with status 200 in 6.36ms
+2025-09-04 01:14:52.772 +00:00 [INF] Request GET /favicon.ico completed with status 404 in 0.26ms
+2025-09-04 01:14:56.679 +00:00 [INF] Request GET /swagger completed with status 404 in 0.09ms

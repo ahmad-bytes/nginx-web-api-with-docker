@@ -1,0 +1,26 @@
+2025-09-04 01:14:33.068 +00:00 [WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://+:8080'.
+2025-09-04 01:17:06.093 +00:00 [WRN] Failed to determine the https port for redirect.
+2025-09-04 01:17:06.105 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.107 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.172 +00:00 [INF] Request GET /api/weather completed with status 200 in 61.14ms
+2025-09-04 01:17:06.241 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.242 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.249 +00:00 [INF] Request GET /api/weather completed with status 200 in 2.70ms
+2025-09-04 01:17:06.311 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.312 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.317 +00:00 [INF] Request GET /api/weather completed with status 200 in 1.66ms
+2025-09-04 01:17:06.369 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.370 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.374 +00:00 [INF] Request GET /api/weather completed with status 200 in 2.47ms
+2025-09-04 01:17:06.427 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.428 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.435 +00:00 [INF] Request GET /api/weather completed with status 200 in 3.26ms
+2025-09-04 01:17:06.491 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.491 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.497 +00:00 [INF] Request GET /api/weather completed with status 200 in 1.74ms
+2025-09-04 01:17:06.541 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.542 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.547 +00:00 [INF] Request GET /api/weather completed with status 200 in 1.58ms
+2025-09-04 01:17:06.589 +00:00 [INF] Getting weather forecasts for 5 days
+2025-09-04 01:17:06.590 +00:00 [INF] Returning 5 weather forecasts
+2025-09-04 01:17:06.594 +00:00 [INF] Request GET /api/weather completed with status 200 in 1.72ms
